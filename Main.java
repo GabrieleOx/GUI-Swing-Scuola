@@ -1,6 +1,6 @@
 
 class Main{
     public static void main(String [] args){
-        sout ciao negro
+        System.out.println("Hello World");
     }
 }
