@@ -19,5 +19,6 @@ public class Informazioni {
         fr.add(pan);
         pan.setBounds(80, 100, 400, 400);
         pan.setBackground(null);
+        fr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }
