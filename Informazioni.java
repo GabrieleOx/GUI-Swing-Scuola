@@ -14,7 +14,6 @@ public class Informazioni {
         fr.add(title);
         title.setBounds(145, 30, 285, 20);
         JPanel pan = new JPanel();
-        testo.setText("Lorem Ipsum, Lorem Ipsum Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, ");
         pan.add(testo);
         fr.add(pan);
         pan.setBounds(80, 100, 400, 400);
