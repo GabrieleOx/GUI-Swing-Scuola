@@ -1,12 +1,23 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class Question {
     private String domanda;
     private String [] p = new String[4];
     private int correct;
+    private boolean result = false;
+
+    public void checkCorr(int current){
+        if((current+1) == this.correct)
+            this.result = true;
+        else
+            this.result = false;
+    }
     
     public String getDomanda() {
         return domanda;
@@ -54,7 +65,7 @@ public class Question {
         this.correct = correct;
     }
 
-    int quiz(){
+    boolean quiz(){
         JFrame dom = new JFrame("Quiz");
         JLabel title = new JLabel(this.domanda);
         JCheckBox [] ch = new JCheckBox[4];
@@ -76,6 +87,18 @@ public class Question {
         title.setFont(new Font("Verdana", Font.BOLD, 32));
         for(int j = 0; j < 4; j++)
             ch[j].setFont(new Font("Verdana", Font.PLAIN, 20));
+        for(int j = 0; j < 4; j++){
+            final int x = j;
+            ch[j].addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    if(ch[x].isSelected())
+                        for(int i = 0; i < 4; i++)
+                            if(i != x)
+                                ch[i].setSelected(false);
+                    this.checkCorr(x);
+                }
+            });
+        }
         send.setBounds(400, 470, 150, 60);
         send.setFont(new Font("Verdana", Font.BOLD, 18));
         dom.getContentPane().setBackground(Color.CYAN);
