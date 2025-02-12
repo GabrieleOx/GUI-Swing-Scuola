@@ -15,8 +15,23 @@ public class Question {
     private int correct;
     private boolean result = false;
 
-    public static int getRDate(){
-        return risposte.size();
+    public static String result(){
+        double perc;
+        int corrette = 0;
+        for(boolean x : risposte)
+            if(x)
+                corrette++;
+        perc = (corrette * 100) / risposte.size();
+        if(perc <= 33)
+            return "La tua conoscenza riguardo l'opera dei volontari e' scarsa,<br>\r\n" + //
+                   "sfrutta questo strumento per incrementarla :)";
+        else if(perc <= 66)
+            return "La tua conoscenza riguardo l'opera dei volontari e' buona,<br>\r\n" + //
+                   "considera l'idea di contribuire attivamente :) :]";
+        else
+            return "La tua conoscenza riguardo l'opera dei volontari e' perfetta,<br>\r\n" + //
+                   "sicuramente sei gia' un volontario, per questo<br>\r\n" + // 
+                   "ti ringraziamo vivamente :) :] :}";
     }
     
     public String getDomanda() {
