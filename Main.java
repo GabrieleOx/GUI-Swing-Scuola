@@ -1,15 +1,10 @@
 import java.awt.*;
+import java.awt.event.*;
+
 import javax.swing.*;
 
 class Main{
-    public static void main(String [] args){
-        //Informazioni.showInfo();
-        //Testimonianze.showInfo();
-        Question x = new Question("Domanda 1:", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", 0);
-        x.quiz();
-        Question y = new Question("Domanda 2:", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", 0);
-        y.quiz();
-        //System.out.println("Le risposte date sono: " + Question.getRDate()); Era solo di test
+    public static void main(String [] args){ // Se vuoi provare qualcosa scrivi nel main questo: Quiz();
     }
 
     public static void Quiz(){
@@ -23,6 +18,23 @@ class Main{
             q[j].quiz();
         JDialog response = new JDialog((Frame) null, "Esito:", true);
         JLabel esito = new JLabel(Question.result()), titolo = new JLabel("Esito del quiz:");
-        esito.setFont(new Font("Verdana", Font.PLAIN, 20));
+        JButton back = new JButton("Back->Home");
+        response.setResizable(false);
+        esito.setFont(new Font("Verdana", Font.PLAIN, 17));
+        titolo.setFont(new Font("Verdana", Font.BOLD, 30));
+        back.setFont(new Font("Verdana", Font.BOLD, 12));
+        response.setLayout(null);
+        response.setSize(400, 350);
+        response.getContentPane().setBackground(Color.ORANGE);
+        response.add(titolo); response.add(esito); response.add(back);
+        titolo.setBounds(70, 40, 300, 40);
+        esito.setBounds(70, 110, 300, 130);
+        back.setBounds(250, 240, 120, 40);
+        back.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                response.dispose();
+            }
+        });
+        response.setVisible(true);
     }
 }

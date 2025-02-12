@@ -12,6 +12,7 @@ public class Testimonianze {
         JPanel pan1 = new JPanel(new FlowLayout(FlowLayout.LEFT)), pan2 = new JPanel();
         final JLabel title = new JLabel("Alcune testimonianze dei volontari:"), imm = new JLabel(new ImageIcon("sfondo-grigio.jpg")), text = new JLabel();
         fr.setSize(800, 600);
+        fr.setResizable(false);
         fr.getContentPane().setBackground(new Color(255, 215, 77));
         text.setText(//
             "<html><ol>\r\n" + //

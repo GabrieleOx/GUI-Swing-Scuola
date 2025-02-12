@@ -16,22 +16,23 @@ public class Question {
     private boolean result = false;
 
     public static String result(){
-        double perc;
+        double perc = 0;
         int corrette = 0;
         for(boolean x : risposte)
             if(x)
                 corrette++;
-        perc = (corrette * 100) / risposte.size();
+        if(risposte.size() > 0)
+            perc = (corrette * 100) / risposte.size();
         if(perc <= 33)
-            return "La tua conoscenza riguardo l'opera dei volontari e' scarsa,<br>\r\n" + //
-                   "sfrutta questo strumento per incrementarla :)";
+            return "<html>La tua conoscenza riguardo l'opera dei volontari e' scarsa,<br>\r\n" + //
+                   "sfrutta questo strumento per incrementarla :)</html>";
         else if(perc <= 66)
-            return "La tua conoscenza riguardo l'opera dei volontari e' buona,<br>\r\n" + //
-                   "considera l'idea di contribuire attivamente :) :]";
+            return "<html>La tua conoscenza riguardo l'opera dei volontari e' buona,<br>\r\n" + //
+                   "considera l'idea di contribuire attivamente :) :]</html>";
         else
-            return "La tua conoscenza riguardo l'opera dei volontari e' perfetta,<br>\r\n" + //
+            return "<html>La tua conoscenza riguardo l'opera dei volontari e' perfetta,<br>\r\n" + //
                    "sicuramente sei gia' un volontario, per questo<br>\r\n" + // 
-                   "ti ringraziamo vivamente :) :] :}";
+                   "ti ringraziamo vivamente :) :] :}</html>";
     }
     
     public String getDomanda() {
@@ -89,6 +90,7 @@ public class Question {
         JPanel pann = new JPanel();
         JButton send = new JButton("Conferma");
         pann.setLayout(new BoxLayout(pann, BoxLayout.Y_AXIS));
+        dom.setResizable(false);
         dom.add(title);
         for(int j = 0; j < 4; j++){
             pann.add(ch[j]);
