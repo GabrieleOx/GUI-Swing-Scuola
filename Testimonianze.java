@@ -10,7 +10,7 @@ public class Testimonianze {
     static void showInfo(){
         JFrame fr = new JFrame("Testi");    // ||-> per mettere gli oggetti al suo interno tutti a sinistra
         JPanel pan1 = new JPanel(new FlowLayout(FlowLayout.LEFT)), pan2 = new JPanel();
-        final JLabel title = new JLabel("alcuni testimonianze dei volontari:"), imm = new JLabel(new ImageIcon("sfondo-grigio.jpg")), text = new JLabel();
+        final JLabel title = new JLabel("Alcune testimonianze dei volontari:"), imm = new JLabel(new ImageIcon("sfondo-grigio.jpg")), text = new JLabel();
         fr.setSize(800, 600);
         fr.getContentPane().setBackground(new Color(255, 215, 77));
         text.setText(//
@@ -39,7 +39,7 @@ public class Testimonianze {
         fr.setLayout(null);
         fr.setVisible(true);
         fr.add(title);
-        title.setBounds(180, 30, 375, 20);
+        title.setBounds(180, 30, 600, 20);
         pan1.add(text);
         pan2.add(imm);
         text.setLocation(120,120);
