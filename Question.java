@@ -1,22 +1,22 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 public class Question {
+    private static ArrayList<Boolean> risposte = new ArrayList<Boolean>();
     private String domanda;
     private String [] p = new String[4];
     private int correct;
     private boolean result = false;
 
-    public void checkCorr(int current){
-        if((current+1) == this.correct)
-            this.result = true;
-        else
-            this.result = false;
+    public static int getRDate(){
+        return risposte.size();
     }
     
     public String getDomanda() {
@@ -65,9 +65,9 @@ public class Question {
         this.correct = correct;
     }
 
-    boolean quiz(){
-        JFrame dom = new JFrame("Quiz");
-        JLabel title = new JLabel(this.domanda);
+    void quiz(){
+        JDialog dom = new JDialog((Frame) null, "Quiz", true);
+        JLabel title = new JLabel(this.domanda), error = new JLabel("*Devi selezionare almeno un campo*");
         JCheckBox [] ch = new JCheckBox[4];
         for(int j = 0; j < 4; j++)
             ch[j] = new JCheckBox(p[j]);
@@ -77,17 +77,20 @@ public class Question {
         dom.add(title);
         for(int j = 0; j < 4; j++){
             pann.add(ch[j]);
-            pann.add(Box.createRigidArea(new Dimension(0, 40)));
+            pann.add(Box.createRigidArea(new Dimension(0, 35)));
         }
+        pann.add(error);
+        error.setVisible(false);
         dom.add(pann);
         dom.add(send);
         pann.setBounds(100, 140, 450, 300);
         dom.setSize(600, 600);
         title.setBounds(80, 30, 500, 40);
         title.setFont(new Font("Verdana", Font.BOLD, 32));
-        for(int j = 0; j < 4; j++)
-            ch[j].setFont(new Font("Verdana", Font.PLAIN, 20));
+        error.setFont(new Font("Verdana", Font.BOLD, 13));
+        error.setForeground(Color.RED);
         for(int j = 0; j < 4; j++){
+            ch[j].setFont(new Font("Verdana", Font.PLAIN, 20));
             final int x = j;
             ch[j].addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
@@ -95,16 +98,32 @@ public class Question {
                         for(int i = 0; i < 4; i++)
                             if(i != x)
                                 ch[i].setSelected(false);
-                    this.checkCorr(x);
+                    checkCorr(x);
                 }
             });
         }
+        send.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                boolean continua = false;
+                for(int j = 0; j < 4; j++)
+                    if(ch[j].isSelected())
+                        continua = true;
+                if(continua){
+                    risposte.add(result);
+                    dom.dispose();
+                }else {
+                    error.setVisible(true);
+                }
+            }
+        });
         send.setBounds(400, 470, 150, 60);
         send.setFont(new Font("Verdana", Font.BOLD, 18));
         dom.getContentPane().setBackground(Color.CYAN);
         dom.setLayout(null);
         dom.setVisible(true);
-        dom.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        return 0;
+    }
+
+    private void checkCorr(int current){
+        this.result = (current + 1) == this.correct;
     }
 }
