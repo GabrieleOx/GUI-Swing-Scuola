@@ -15,6 +15,7 @@ public class Informazioni {
         fr.getContentPane().setBackground(new Color(255, 215, 77));
         text.setText(//
             "<html><ol>\r\n" + //
+            "Esempio di titoletto:<br><br>\r\n" + //
             "<li>primo elemento<br>\r\n" + //
                 "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum<br>\r\n" + //
                 "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum</li>\r\n" + //
