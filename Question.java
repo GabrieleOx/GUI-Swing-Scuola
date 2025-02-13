@@ -102,12 +102,12 @@ public class Question {
         dom.add(send);
         pann.setBounds(100, 140, 450, 300);
         dom.setSize(600, 600);
-        title.setBounds(80, 30, 500, 40);
-        title.setFont(new Font("Verdana", Font.BOLD, 32));
+        title.setBounds(50, 20, 540, 90);
+        title.setFont(new Font("Verdana", Font.BOLD, 23));
         error.setFont(new Font("Verdana", Font.BOLD, 13));
         error.setForeground(Color.RED);
         for(int j = 0; j < 4; j++){
-            ch[j].setFont(new Font("Verdana", Font.PLAIN, 20));
+            ch[j].setFont(new Font("Verdana", Font.PLAIN, 16));
             final int x = j;
             ch[j].addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
