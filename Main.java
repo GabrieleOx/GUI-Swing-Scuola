@@ -8,13 +8,13 @@ class Main{
     }
 
     public static void Quiz(){
-        Question [] q = new Question[5];
+        Question [] q = new Question[20]; //Le venti domande del quiz da settare:
         q[0] = new Question("Domanda 1:", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", 1);
         q[1] = new Question("Domanda 2:", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", 2);
         q[2] = new Question("Domanda 3:", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", 4);
         q[3] = new Question("Domanda 4:", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", 3);
         q[4] = new Question("Domanda 5:", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", "lorem Ipsum lorem Ipsum", 3);
-        for(int j = 0; j < 5; j++)
+        for(int j = 0; j < 5; j++) //5 solo per test
             q[j].quiz();
         JDialog response = new JDialog((Frame) null, "Esito:", true);
         JLabel esito = new JLabel(Question.result()), titolo = new JLabel("Esito del quiz:");

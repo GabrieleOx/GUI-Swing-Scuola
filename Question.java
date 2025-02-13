@@ -15,7 +15,7 @@ public class Question {
     private int correct;
     private boolean result = false;
 
-    public static String result(){
+    public static String result(){ //risultati del quiz in percentuale
         double perc = 0;
         int corrette = 0;
         for(boolean x : risposte)
