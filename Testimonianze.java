@@ -1,14 +1,11 @@
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Font;
-
+import java.awt.*;
 import javax.swing.*;
 
 //https://www.tpointtech.com/java-swing
 
 public class Testimonianze {
     static void showInfo(){
-        JFrame fr = new JFrame("Testi");    // ||-> per mettere gli oggetti al suo interno tutti a sinistra
+        JDialog fr = new JDialog((Frame) null, "Testi", true);    // ||-> per mettere gli oggetti al suo interno tutti a sinistra
         JPanel pan1 = new JPanel(new FlowLayout(FlowLayout.LEFT)), pan2 = new JPanel();
         final JLabel title = new JLabel("Alcune testimonianze dei volontari:"), imm = new JLabel(new ImageIcon("sfondo-grigio.jpg")), text = new JLabel();
         fr.setSize(800, 600);
@@ -38,9 +35,8 @@ public class Testimonianze {
         title.setFont(new Font("Verdana", Font.BOLD, 24));
         text.setFont(new Font("Verdana", Font.PLAIN, 14));
         fr.setLayout(null);
-        fr.setVisible(true);
         fr.add(title);
-        title.setBounds(180, 30, 600, 20);
+        title.setBounds(150, 30, 600, 20);
         pan1.add(text);
         pan2.add(imm);
         text.setLocation(120,120);
@@ -49,6 +45,6 @@ public class Testimonianze {
         pan1.setBounds(30, 100, 450, 400);
         pan2.setBounds(500, 97, 250, 400);
         pan2.setBackground(null);
-        fr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        fr.setVisible(true);
     }
 }

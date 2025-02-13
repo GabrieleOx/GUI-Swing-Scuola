@@ -1,10 +1,30 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
-class Main{
+public class Main{
     public static void main(String [] args){ // Se vuoi provare qualcosa scrivi nel main questo: Quiz();
+        while(Home());
+        Grazie();
+    }
+
+    public static void Grazie(){
+        JDialog thanks = new JDialog((Frame) null, "Grazie", true);
+        JLabel ringr = new JLabel(), cuore = new JLabel(new ImageIcon("cuore.png"));
+        ringr.setText("<html>Grazie per aver sostenuto tutto il lavoro svolto dai volontari<br>" + //
+                        "per la comunita', speriamo di averti accanto a noi al piu' presto</html>");
+        thanks.setSize(400, 300);
+        thanks.getContentPane().setBackground(new Color(102, 102, 255));
+        thanks.setResizable(false);
+        thanks.add(ringr); thanks.add(cuore);
+        ringr.setBounds(75, 25, 280, 180);
+        ringr.setFont(new Font("Verdana", Font.BOLD, 18));
+        cuore.setBounds(270, 80, 130, 130);
+        thanks.setVisible(true);
+    }
+
+    public static boolean Home(){ // qui mettiamo la schermata home, ritornerà false solo qundo si vuole uscire...
+        return false;
     }
 
     public static void Quiz(){
