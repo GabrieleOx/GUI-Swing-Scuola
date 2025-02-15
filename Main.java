@@ -3,13 +3,15 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Main{
-    static boolean ret = true;
+    static int what = 0;
 
-    public static void changeRet(){
-        ret = !ret;
+    public static void changeRet(int val){
+        what = val;
     }
     public static void main(String [] args){ // Se vuoi provare qualcosa scrivi nel main questo: Quiz();
-        while(Home());
+        while(Home()){
+            System.out.println("Sono ritornato");
+        }
         Quiz();
         Grazie();
     }
@@ -35,13 +37,18 @@ public class Main{
         JButton info= new JButton("INFORMAZIONI SUL VOLONTARIATO");
          info.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                changeRet(1);
                 home.dispose();
-                Informazioni.showInfo();
             }
         });
         home.setSize(600, 600);
         home.add(titolo); home.add(info);
-        return ret;
+        home.setVisible(true);
+        switch(what){ // 0: Esci, 1: Info, 2: Testimonianze, 3: Quiz, 4: Easter egg
+            case 0: return false;
+            case 1: Informazioni.showInfo();return true;
+            default: return true;
+        }
     }
 
     public static void Quiz(){
