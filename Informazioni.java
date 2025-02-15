@@ -13,25 +13,25 @@ public class Informazioni {
         fr.getContentPane().setBackground(new Color(255, 215, 77));
         text.setText(//
             "<html><ol>\r\n" + //
-            "Esempio di titoletto:<br><br>\r\n" + //
-            "<li>primo elemento<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum</li>\r\n" + //
-            "<li>secondo elemento<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum</li>\r\n" + //
-            "<li>terzo elemento<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum</li>\r\n" + //
-            "<li>quarto elemento<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum</li>\r\n" + //
-            "<li>quinto elemento<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum</li>\r\n" + //
-            "<li>sesto elemento<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum<br>\r\n" + //
-                "lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum</li>\r\n" + //
+            "IMPORTANZA DEL VOLONTARIATO:<br><br>\r\n" + //
+            "<li>Supporto ai bisognosi<br>\r\n" + //
+                "Il volontariato offre aiuto a chi e' in difficoltà,<br>\r\n" + //
+                "milgiorando la qualità di vita di molti</li>\r\n" + //
+            "<li>Rafforzamento dei legami comunitari<br>\r\n" + //
+                "Promuove un senso di solidarieta' e connessione<br>\r\n" + //
+                "tra i membri della comunita'</li>\r\n" + //
+            "<li>Impatti positivi sulla salute mentale<br>\r\n" + //
+                "Aiutare gli altri puo' milgiorare il benessere <br>\r\n" + //
+                "emotivo e psicologico di chi fa volontariato</li>\r\n" + //
+            "<li>Sviluppo senso di Responsabilita'<br>\r\n" + //
+                "Fare volontariato contrivuisce a sviluppare un senso di<br>\r\n" + //
+                " responsabilita' verso la comunità e la società nel suo complesso.</li>\r\n" + //
+            "<li>Risorse per organizzazioni No-Profit<br>\r\n" + //
+                "Le organizzazioni benefiche spesso dipendono<br>\r\n" + //
+                "dai volontari per fornire i loro servizi</li>\r\n" + //
+            "<li>Crescita personale<br>\r\n" + //
+                "Chi fa volontariato spesso sviluppa nuove competenze<br>\r\n" + //
+                "e una maggiore consapevolezza sociale.</li>\r\n" + //
             "</ol></html>");
         title.setFont(new Font("Verdana", Font.BOLD, 24));
         text.setFont(new Font("Verdana", Font.PLAIN, 14));
