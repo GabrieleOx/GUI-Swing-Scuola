@@ -36,9 +36,12 @@ public class Main{
         JLabel titolo=new JLabel("IL VOLONTARIATO PER TUTTI");
         JButton info= new JButton("INFORMAZIONI SUL VOLONTARIATO");
         JButton testi=new JButton("ALCUNE TESTIMONIANZE");
+        JButton quiz=new JButton("SCOPRI QUANTO NE SAI DI VOLONTARIATO");
+        JButton exit=new JButton("EXIT");
+        JButton egg=new JButton("EASTEREGG"); 
         home.setLayout(null);
         home.setSize(600, 600);
-        home.add(titolo); home.add(info); home.add(testi);
+        home.add(titolo); home.add(info); home.add(testi); home.add(quiz); home.add(exit); home.add(egg);
         titolo.setBounds(210, 50, 300, 40);
         info.setBounds(150, 170, 300, 40);
          info.addActionListener(new ActionListener(){
@@ -54,13 +57,38 @@ public class Main{
                 home.dispose();
             }
         });
+        quiz.setBounds(150, 270, 300, 40);
+        quiz.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                changeRet(3);
+                home.dispose();
+            }
+        });
+
+        exit.setBounds(150, 320, 300, 40);
+        exit.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                changeRet(0);
+                home.dispose();
+            }
+        });
+
+        egg.setBounds(150, 370, 300, 40);
+        egg.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                changeRet(4);
+                home.dispose();
+            }
+        });
+        
         home.setSize(600, 600);
-        home.add(titolo); home.add(info);
         home.setVisible(true);
         switch(what){ // 0: Esci, 1: Info, 2: Testimonianze, 3: Quiz, 4: Easter egg
             case 0: return false;
             case 1: Informazioni.showInfo();return true;
             case 2: Testimonianze.showInfo();return true;
+            case 3: Main.Quiz();return true;
+          
             default: return true;
         }
     }

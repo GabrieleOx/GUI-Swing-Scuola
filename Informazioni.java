@@ -25,7 +25,7 @@ public class Informazioni {
                 "emotivo e psicologico di chi fa volontariato</li>\r\n" + //
             "<li>Sviluppo senso di Responsabilita'<br>\r\n" + //
                 "Fare volontariato contrivuisce a sviluppare un senso di<br>\r\n" + //
-                " responsabilita' verso la comunità e la società nel suo complesso.</li>\r\n" + //
+                " responsabilita' verso la comunità e la società.</li>\r\n" + //
             "<li>Risorse per organizzazioni No-Profit<br>\r\n" + //
                 "Le organizzazioni benefiche spesso dipendono<br>\r\n" + //
                 "dai volontari per fornire i loro servizi</li>\r\n" + //
