@@ -88,7 +88,7 @@ public class Main{
             case 1: Informazioni.showInfo();return true;
             case 2: Testimonianze.showInfo();return true;
             case 3: Main.Quiz();return true;
-          
+            case 4: EasterEgg.showInfo();return true;
             default: return true;
         }
     }
