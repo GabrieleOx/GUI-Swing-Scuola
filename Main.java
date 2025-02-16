@@ -35,9 +35,22 @@ public class Main{
         JDialog home= new JDialog((Frame) null, "home", true);//crea la finestra
         JLabel titolo=new JLabel("IL VOLONTARIATO PER TUTTI");
         JButton info= new JButton("INFORMAZIONI SUL VOLONTARIATO");
+        JButton testi=new JButton("ALCUNE TESTIMONIANZE");
+        home.setLayout(null);
+        home.setSize(600, 600);
+        home.add(titolo); home.add(info); home.add(testi);
+        titolo.setBounds(210, 50, 300, 40);
+        info.setBounds(150, 170, 300, 40);
          info.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(1);
+                home.dispose();
+            }
+        }); 
+        testi.setBounds(150, 220, 300, 40);
+        testi.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                changeRet(2);
                 home.dispose();
             }
         });
@@ -47,6 +60,7 @@ public class Main{
         switch(what){ // 0: Esci, 1: Info, 2: Testimonianze, 3: Quiz, 4: Easter egg
             case 0: return false;
             case 1: Informazioni.showInfo();return true;
+            case 2: Testimonianze.showInfo();return true;
             default: return true;
         }
     }
