@@ -10,20 +10,28 @@ public class Main{
         what = val;
     }
 
-    public static void changeIn(){}
+    public static void changeIn(){
+        informa = true;
+    }
+
+    public static void changeTe(){
+        testimonia = true;
+    }
+
+    public static void changePr(){
+        prova = true;
+    }
 
     public static boolean bunny(){
-        if(informa && testimonia && prova)
-            return true;
-        return false;
+        return prova && informa && testimonia;
     }
-    public static void main(String [] args){ // Se vuoi provare qualcosa scrivi nel main questo: Quiz();
+    public static void main(String [] args){
         while(Home());
         Grazie();
-    }
+        }
 
     public static void Grazie(){
-        JDialog thanks = new JDialog((Frame) null, "Grazie", true);
+        JFrame thanks = new JFrame("Grazie");
         JLabel ringr = new JLabel(), cuore = new JLabel(new ImageIcon("cuore.png"));
         ringr.setText("<html>Grazie per aver sostenuto tutto il lavoro svolto dai volontari<br>" + //
                         "per la comunita', speriamo di averti accanto a noi al piu' presto</html>");
@@ -34,67 +42,77 @@ public class Main{
         ringr.setBounds(75, 25, 280, 180);
         ringr.setFont(new Font("Verdana", Font.BOLD, 18));
         cuore.setBounds(270, 80, 130, 130);
+        thanks.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         thanks.setVisible(true);
     }
 
     public static boolean Home(){ // qui mettiamo la schermata home, ritornerà false solo qundo si vuole uscire...
         JDialog home= new JDialog((Frame) null, "home", true);//crea la finestra
         JLabel titolo=new JLabel("IL VOLONTARIATO PER TUTTI");
-        JButton info= new JButton("INFORMAZIONI SUL VOLONTARIATO");
-        JButton testi=new JButton("ALCUNE TESTIMONIANZE");
-        JButton quiz=new JButton("SCOPRI QUANTO NE SAI DI VOLONTARIATO");
+        JButton info= new JButton("<html>INFORMAZIONI SUL<br>&nbsp;&nbsp;&nbsp;VOLONTARIATO</html>");
+        JButton testi=new JButton("ALCUNE TESTIMONIANZE");  //&nbsp; => spazio che in html viene mostrato per forza diciamo
+        JButton quiz=new JButton("<html>&nbsp;&nbsp;&nbsp;SCOPRI QUANTO NE<br>SAI DI VOLONTARIATO</html>");
         JButton exit=new JButton("EXIT");
         JButton egg=new JButton("EASTEREGG"); 
         home.setLayout(null);
         home.setSize(600, 600);
+        home.getContentPane().setBackground(new Color(120, 66, 100));
         home.add(titolo); home.add(info); home.add(testi); home.add(quiz); home.add(exit); home.add(egg);
         if(bunny())
             egg.setVisible(true);
         else
             egg.setVisible(false);
-        titolo.setBounds(210, 50, 300, 40);
-        info.setBounds(150, 170, 300, 40);
+        titolo.setBounds(95, 50, 400, 40);
+        titolo.setFont(new Font("Verdana", Font.BOLD, 24));
+        info.setBounds(150, 170, 300, 60);
          info.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(1);
-                changeBunny();
+                changeIn();
                 home.dispose();
             }
-        }); 
-        testi.setBounds(150, 220, 300, 40);
+        });
+        info.setFont(new Font("Verdana", Font.BOLD, 18));
+        testi.setBounds(150, 240, 300, 40);
         testi.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(2);
-                changeBunny();
+                changeTe();
                 home.dispose();
             }
         });
-        quiz.setBounds(150, 270, 300, 40);
+        testi.setFont(new Font("Verdana", Font.BOLD, 18));
+        quiz.setBounds(150, 290, 300, 60);
         quiz.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(3);
-                changeBunny();
+                changePr();
                 home.dispose();
             }
         });
-
-        exit.setBounds(150, 320, 300, 40);
+        quiz.setFont(new Font("Verdana", Font.BOLD, 18));
+        exit.setBounds(150, 360, 300, 40);
         exit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(0);
                 home.dispose();
             }
         });
-
-        egg.setBounds(150, 370, 300, 40);
+        exit.setFont(new Font("Verdana", Font.BOLD, 18));
+        egg.setBounds(150, 410, 300, 40);
         egg.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(4);
                 home.dispose();
             }
         });
-        
+        egg.setFont(new Font("Verdana", Font.BOLD, 18));
         home.setSize(600, 600);
+        home.addWindowListener(new WindowAdapter() { //Aggiunge o modifica l'azione effettuata alla chiusura della finestra (X rossa in alto a destra)
+            public void windowClosing(WindowEvent e){
+                changeRet(0);
+            }
+        });
         home.setVisible(true);
         switch(what){ // 0: Esci, 1: Info, 2: Testimonianze, 3: Quiz, 4: Easter egg
             case 0: return false;
