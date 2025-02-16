@@ -3,10 +3,15 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Main{
-    static int what = 0;
+    static int what = 0, bunny = 0;
 
     public static void changeRet(int val){
         what = val;
+    }
+
+    public static void changeBunny(){
+        if(bunny < 3)
+            bunny++;
     }
     public static void main(String [] args){ // Se vuoi provare qualcosa scrivi nel main questo: Quiz();
         while(Home());
@@ -39,11 +44,16 @@ public class Main{
         home.setLayout(null);
         home.setSize(600, 600);
         home.add(titolo); home.add(info); home.add(testi); home.add(quiz); home.add(exit); home.add(egg);
+        if(bunny == 3)
+            egg.setVisible(true);
+        else
+            egg.setVisible(false);
         titolo.setBounds(210, 50, 300, 40);
         info.setBounds(150, 170, 300, 40);
          info.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(1);
+                changeBunny();
                 home.dispose();
             }
         }); 
@@ -51,6 +61,7 @@ public class Main{
         testi.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(2);
+                changeBunny();
                 home.dispose();
             }
         });
@@ -58,6 +69,7 @@ public class Main{
         quiz.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 changeRet(3);
+                changeBunny();
                 home.dispose();
             }
         });
