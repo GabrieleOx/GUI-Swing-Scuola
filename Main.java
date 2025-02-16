@@ -9,10 +9,7 @@ public class Main{
         what = val;
     }
     public static void main(String [] args){ // Se vuoi provare qualcosa scrivi nel main questo: Quiz();
-        while(Home()){
-            System.out.println("Sono ritornato");
-        }
-        Quiz();
+        while(Home());
         Grazie();
     }
 
@@ -87,7 +84,7 @@ public class Main{
             case 0: return false;
             case 1: Informazioni.showInfo();return true;
             case 2: Testimonianze.showInfo();return true;
-            case 3: Main.Quiz();return true;
+            case 3: Quiz();return true;
             case 4: EasterEgg.showInfo();return true;
             default: return true;
         }
