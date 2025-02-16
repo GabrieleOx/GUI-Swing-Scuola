@@ -3,15 +3,19 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Main{
-    static int what = 0, bunny = 0;
+    static int what = 0;
+    static boolean informa = false, testimonia = false, prova = false;
 
     public static void changeRet(int val){
         what = val;
     }
 
-    public static void changeBunny(){
-        if(bunny < 3)
-            bunny++;
+    public static void changeIn(){}
+
+    public static boolean bunny(){
+        if(informa && testimonia && prova)
+            return true;
+        return false;
     }
     public static void main(String [] args){ // Se vuoi provare qualcosa scrivi nel main questo: Quiz();
         while(Home());
@@ -44,7 +48,7 @@ public class Main{
         home.setLayout(null);
         home.setSize(600, 600);
         home.add(titolo); home.add(info); home.add(testi); home.add(quiz); home.add(exit); home.add(egg);
-        if(bunny == 3)
+        if(bunny())
             egg.setVisible(true);
         else
             egg.setVisible(false);
