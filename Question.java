@@ -101,6 +101,7 @@ public class Question {
         dom.add(pann);
         dom.add(send);
         pann.setBounds(100, 140, 450, 300);
+        pann.setBackground(null);
         dom.setSize(600, 600);
         title.setBounds(50, 20, 540, 90);
         title.setFont(new Font("Verdana", Font.BOLD, 23));
@@ -135,7 +136,7 @@ public class Question {
         });
         send.setBounds(400, 470, 150, 60);
         send.setFont(new Font("Verdana", Font.BOLD, 18));
-        dom.getContentPane().setBackground(Color.CYAN);
+        dom.getContentPane().setBackground(new Color(133, 189, 117));
         dom.setLayout(null);
         dom.setVisible(true);
     }
