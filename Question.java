@@ -93,6 +93,7 @@ public class Question {
         dom.setResizable(false);
         dom.add(title);
         for(int j = 0; j < 4; j++){
+            ch[j].setBackground(null);
             pann.add(ch[j]);
             pann.add(Box.createRigidArea(new Dimension(0, 35)));
         }

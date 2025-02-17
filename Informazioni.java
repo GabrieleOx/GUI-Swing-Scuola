@@ -40,6 +40,7 @@ public class Informazioni {
         title.setFont(new Font("Verdana", Font.BOLD, 24));
         text.setFont(new Font("Verdana", Font.PLAIN, 14));
         text.setBackground(null);
+        pan1.setBackground(null);
         fr.setLayout(null);
         fr.add(title);
         title.setBounds(180, 30, 375, 20);

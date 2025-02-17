@@ -37,6 +37,7 @@ public class Testimonianze {
         title.setFont(new Font("Verdana", Font.BOLD, 24));
         text.setFont(new Font("Verdana", Font.PLAIN, 14));
         text.setBackground(null);
+        pan1.setBackground(null);
         fr.setLayout(null);
         fr.add(title);
         title.setBounds(150, 30, 600, 20);

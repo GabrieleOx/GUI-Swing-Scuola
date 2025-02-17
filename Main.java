@@ -36,7 +36,7 @@ public class Main{
         ringr.setText("<html>Grazie per aver sostenuto tutto il lavoro svolto dai volontari<br>" + //
                         "per la comunita', speriamo di averti accanto a noi al piu' presto</html>");
         thanks.setSize(400, 300);
-        thanks.getContentPane().setBackground(new Color(102, 102, 255));
+        thanks.getContentPane().setBackground(new Color(133, 189, 117));
         thanks.setResizable(false);
         thanks.add(ringr); thanks.add(cuore);
         ringr.setBounds(75, 25, 280, 180);
