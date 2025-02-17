@@ -14,7 +14,7 @@ public class Informazioni {
         JButton esci = new JButton("Back->Home");
         fr.setSize(800, 600);
         fr.setResizable(false);
-        fr.getContentPane().setBackground(new Color(255, 215, 77));
+        fr.getContentPane().setBackground(new Color(133, 189, 117));
         text.setText(//
             "<html><ol>\r\n" + //
             "IMPORTANZA DEL VOLONTARIATO:<br><br>\r\n" + //
@@ -39,6 +39,7 @@ public class Informazioni {
             "</ol></html>");
         title.setFont(new Font("Verdana", Font.BOLD, 24));
         text.setFont(new Font("Verdana", Font.PLAIN, 14));
+        text.setBackground(null);
         fr.setLayout(null);
         fr.add(title);
         title.setBounds(180, 30, 375, 20);
