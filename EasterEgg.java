@@ -10,7 +10,7 @@ public class EasterEgg {
         JDialog easteregg = new JDialog((Frame) null, "easteregg", true);
         easteregg.setLayout(null);
         easteregg.setSize(600, 600);
-        easteregg.getContentPane().setBackground(new Color(120, 66, 100));
+        easteregg.getContentPane().setBackground(new Color(133, 189, 117));
 
         JLabel linkYT = new JLabel("<html><a href=''>Visita il nostro sito</a></html>");
         linkYT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
