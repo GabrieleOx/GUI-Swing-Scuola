@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 //https://www.tpointtech.com/java-swing
@@ -10,7 +9,7 @@ public class Informazioni {
     static void showInfo(){
         JDialog fr = new JDialog((Frame) null, "Info", true);
         JPanel pan1 = new JPanel(new FlowLayout(FlowLayout.LEFT)), pan2 = new JPanel();
-        final JLabel title = new JLabel("Informazioni sul volontario:"), imm = new JLabel(new ImageIcon("sfondo-grigio.jpg")), text = new JLabel();
+        final JLabel title = new JLabel("Informazioni sul volontario:"), imm = new JLabel(new ImageIcon("volontariato.jpg")), text = new JLabel();
         JButton esci = new JButton("Back->Home");
         fr.setSize(800, 600);
         fr.setResizable(false);
