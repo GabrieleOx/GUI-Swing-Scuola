@@ -12,7 +12,7 @@ public class Testimonianze {
         JButton esci = new JButton("Back->Home");
         fr.setSize(800, 600);
         fr.setResizable(false);
-        fr.getContentPane().setBackground(new Color(255, 215, 77));
+        fr.getContentPane().setBackground(new Color(133, 189, 117));
         text.setText(//
             "<html><ol>\r\n" + //
             "<li>Assistenza agli anziani<br>\r\n" + //
@@ -36,6 +36,7 @@ public class Testimonianze {
             "</ol></html>");
         title.setFont(new Font("Verdana", Font.BOLD, 24));
         text.setFont(new Font("Verdana", Font.PLAIN, 14));
+        text.setBackground(null);
         fr.setLayout(null);
         fr.add(title);
         title.setBounds(150, 30, 600, 20);
