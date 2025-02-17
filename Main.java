@@ -56,7 +56,7 @@ public class Main{
         JButton egg=new JButton("EASTEREGG"); 
         home.setLayout(null);
         home.setSize(600, 600);
-        home.getContentPane().setBackground(new Color(120, 66, 100));
+        home.getContentPane().setBackground(new Color(133, 189, 117));
         home.add(titolo); home.add(info); home.add(testi); home.add(quiz); home.add(exit); home.add(egg);
         if(bunny())
             egg.setVisible(true);
@@ -158,7 +158,7 @@ public class Main{
         back.setFont(new Font("Verdana", Font.BOLD, 12));
         response.setLayout(null);
         response.setSize(400, 350);
-        response.getContentPane().setBackground(Color.ORANGE);
+        response.getContentPane().setBackground(new Color(133, 189, 117));
         response.add(titolo); response.add(esito); response.add(back);
         titolo.setBounds(70, 40, 300, 40);
         esito.setBounds(70, 110, 300, 130);
