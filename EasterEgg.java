@@ -52,10 +52,10 @@ public class EasterEgg {
             }
         });
         JLabel titololink=new JLabel("PER AVVICINARSI AL VOLONTARIATO");
-        titololink.setBounds(45, 50, 600, 40);
+        titololink.setBounds(41, 50, 600, 40);
         titololink.setFont(new Font("Verdana", Font.BOLD, 24));
         JLabel titoloYT=new JLabel("NON GIRARTI DALL'ALTRA PARTE");
-        titoloYT.setBounds(45, 260, 600, 40);
+        titoloYT.setBounds(58, 260, 600, 40);
         titoloYT.setFont(new Font("Verdana", Font.BOLD, 24));
         easteregg.add(linkYT);easteregg.add(link1);easteregg.add(link2);easteregg.add(titololink);easteregg.add(titoloYT);
         easteregg.setVisible(true);
