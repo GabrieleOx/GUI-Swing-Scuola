@@ -9,7 +9,10 @@ public class Informazioni {
     static void showInfo(){
         JDialog fr = new JDialog((Frame) null, "Info", true);
         JPanel pan1 = new JPanel(new FlowLayout(FlowLayout.LEFT)), pan2 = new JPanel();
-        final JLabel title = new JLabel("Informazioni sul volontario:"), imm = new JLabel(new ImageIcon("volontariato.jpg")), text = new JLabel();
+        final JLabel title = new JLabel("Informazioni sul volontario:"), text = new JLabel();
+        ImageIcon originalIcon = new ImageIcon("mani-volontariato.jpeg");
+        Image image = originalIcon.getImage().getScaledInstance(260, 400, Image.SCALE_SMOOTH);
+        JLabel imm = new JLabel(new ImageIcon(image));
         JButton esci = new JButton("Back->Home");
         fr.setSize(800, 600);
         fr.setResizable(false);

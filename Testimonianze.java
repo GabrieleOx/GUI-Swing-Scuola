@@ -2,13 +2,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-//https://www.tpointtech.com/java-swing
-
 public class Testimonianze {
     static void showInfo(){
         JDialog fr = new JDialog((Frame) null, "Testi", true);    // ||-> per mettere gli oggetti al suo interno tutti a sinistra
         JPanel pan1 = new JPanel(new FlowLayout(FlowLayout.LEFT)), pan2 = new JPanel();
-        final JLabel title = new JLabel("Alcune testimonianze dei volontari:"), imm = new JLabel(new ImageIcon("volontariato.jpg")), text = new JLabel();
+        final JLabel title = new JLabel("Alcune testimonianze dei volontari:"), text = new JLabel();
+        ImageIcon originalIcon = new ImageIcon("volontariato.jpg");
+        Image image = originalIcon.getImage().getScaledInstance(260, 400, Image.SCALE_SMOOTH);
+        JLabel imm = new JLabel(new ImageIcon(image));
         JButton esci = new JButton("Back->Home");
         fr.setSize(800, 600);
         fr.setResizable(false);
@@ -18,8 +19,8 @@ public class Testimonianze {
             "<li>Assistenza agli anziani<br>\r\n" + //
                 "essere volontari in una casa di riposo mi ha ca<br>\r\n" + //
                 "mbiato la vita e arricchito</li>\r\n" + //
-            "<li>Progetti aducativi<br>\r\n" + //
-                "tutoraggio per bambini:vedere il loro entusiasmo<br>\r\n" + //
+            "<li>Progetti educativi<br>\r\n" + //
+                "tutoraggio per bambini: vedere il loro entusiasmo<br>\r\n" + //
                 "crescere è inestimabile</li>\r\n" + //
             "<li>Pulizia delle spiagge<br>\r\n" + //
                 "Proteggere l'ambiente e unire le forze per una <br>\r\n" + //
@@ -55,8 +56,12 @@ public class Testimonianze {
             }
         });
         pan1.setBounds(30, 100, 450, 400);
-        pan2.setBounds(500, 97, 250, 400);
+        pan2.setBounds(500, 97, 260, 400);
         pan2.setBackground(null);
         fr.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        showInfo();
     }
 }
