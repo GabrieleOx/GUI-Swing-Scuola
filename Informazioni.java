@@ -10,8 +10,8 @@ public class Informazioni {
         JDialog fr = new JDialog((Frame) null, "Info", true);
         JPanel pan1 = new JPanel(new FlowLayout(FlowLayout.LEFT)), pan2 = new JPanel();
         final JLabel title = new JLabel("Informazioni sul volontario:"), text = new JLabel();
-        ImageIcon originalIcon = new ImageIcon("mani-volontariato.jpeg");
-        Image image = originalIcon.getImage().getScaledInstance(260, 400, Image.SCALE_SMOOTH);
+        ImageIcon originalIcon = new ImageIcon("albero_volontariato.jpg");
+        Image image = originalIcon.getImage().getScaledInstance(300, 400, Image.SCALE_SMOOTH);
         JLabel imm = new JLabel(new ImageIcon(image));
         JButton esci = new JButton("Back->Home");
         fr.setSize(800, 600);
@@ -60,7 +60,7 @@ public class Informazioni {
             }
         });
         pan1.setBounds(30, 100, 450, 400);
-        pan2.setBounds(500, 97, 260, 400);
+        pan2.setBounds(400, 100, 450, 400);
         pan2.setBackground(null);
         fr.setVisible(true);
     }
