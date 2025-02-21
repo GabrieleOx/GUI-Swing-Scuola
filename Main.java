@@ -55,6 +55,7 @@ public class Main{
         JButton exit=new JButton("EXIT");
         JButton egg=new JButton("EASTEREGG"); 
         home.setLayout(null);
+        home.setResizable(false);
         home.setSize(600, 600);
         home.getContentPane().setBackground(new Color(133, 189, 117));
         home.add(titolo); home.add(info); home.add(testi); home.add(quiz); home.add(exit); home.add(egg);
