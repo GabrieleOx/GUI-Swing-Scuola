@@ -10,6 +10,7 @@ public class EasterEgg {
         JDialog easteregg = new JDialog((Frame) null, "easteregg", true);
         easteregg.setLayout(null);
         easteregg.setSize(600, 600);
+        easteregg.setResizable(false);
         easteregg.getContentPane().setBackground(new Color(133, 189, 117));
         JLabel linkYT = new JLabel("video di sensibilizzazione");
         linkYT.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -64,10 +65,6 @@ public class EasterEgg {
         titoloYT.setFont(new Font("Verdana", Font.BOLD, 24));
         easteregg.add(linkYT);easteregg.add(link1);easteregg.add(link2);easteregg.add(titololink);easteregg.add(titoloYT);
         easteregg.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(EasterEgg::showInfo);
     }
 }
 
